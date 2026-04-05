@@ -10,5 +10,5 @@ def main():
     result = add(number_list)
     print(result, "입니다")
 
-if__name__ == "__main__":
+if __name__ == "__main__":
     main()
