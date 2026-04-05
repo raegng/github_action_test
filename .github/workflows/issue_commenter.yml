@@ -1,4 +1,4 @@
-name: Auto CommentonIssue
+name: Auto Comment on Issue
 
 # 이슈가 생성될 때 이벤트 트리거
 on:
@@ -15,11 +15,11 @@ jobs:
       - name: Comment on new issue
         uses: actions/github-script@v6
         with:
-        github-token: ${{ secrets.MY_PERSONAL_TOKEN}}
-        script: |
-          github.rest.issues.createComment({
-            issue_number: context.payload.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: "감사합니다. 이슈 확인 후 처리해드릴게요."
-          })
+          github-token: ${{ secrets.MY_PERSONAL_TOKEN }}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.payload.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "감사합니다. 이슈 확인 후 처리해드릴게요."
+            })
